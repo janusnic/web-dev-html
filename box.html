@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Box Model</title>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato'>
+
+    <style media="all">
+     @import url(css/style.css);
+  
+     body {
+          font-family: Lato;
+          margin: 2em;
+          font-size: 1.4em;
+        }
+
+     h2 {
+          font-size: 1.1em;
+        }
+
+     .heading {
+          margin-top: 60px;
+        }
+
+     .odiv {
+          background: orange;
+          height: 100px;
+          width: 400px;
+          padding: 30px;
+          border: 25px solid black;
+        }
+
+     .wt-model {
+          box-sizing: content-box;
+        }
+
+     .tr-model {
+          box-sizing: border-box;
+        }
+
+
+    .block {
+        height: 96px;
+        line-height: 96px;
+        text-align: center;
+    }
+
+    .block-1 {
+        margin-bottom:20px;
+
+    }
+
+    .block-2 {
+        margin-top:40px;
+    }
+
+    .pdiv {
+      background: orange;
+      background-clip: content-box;
+      height: 80px;
+      width: 80px;
+      margin: 2em;
+      margin-top: 0em;
+      border: 1px solid black;
+    }
+
+    .ap {
+      padding: 10px;
+    }
+
+    .bp {
+      padding: 2em 4em;
+    }
+
+    .cp {
+      padding: 1em 20px 2em; 
+    }
+
+    .dp {
+      padding: 10px 10% 2em 15%;
+    }
+
+    .yellp {
+      background: yellow;
+      width: 28%;
+      display: inline-block;
+      padding: 1em 0.4em;
+    }
+
+    .absolute p {
+      margin: 8px;
+    }
+
+    .relative p {
+      margin: 1.5%;
+    }
+
+    .small {
+      font-size: 0.8em;
+    }
+
+    .medium {
+      font-size: 1.2em;
+    }
+
+    .large {
+      font-size: 1.75em;
+    }
+
+    .absolute1 p {
+      text-align: justify;
+      background: yellow;
+      padding: 16px;
+    }
+
+    .relative1 p {
+      text-align: justify;
+      background: yellow;
+      padding: 1em;
+    }
+
+    .ts {
+      margin-bottom: 40px;
+    }
+
+    .bs {
+      margin-top: 25px;
+    }
+
+    .dib {
+      display: inline-block;
+      width: 100%;
+    }
+
+    .parent {
+      background: orange;
+      height: 140px;
+    }
+
+    .first-child {
+      background: red;
+      height: 100px;
+      margin: 20px;
+    }
+
+    .padded {
+      padding-top: 1px;
+    }
+
+    .bordered {
+      border-top: 1px solid transparent;
+    }
+
+    br {
+      clear: both;
+    }
+
+    .oparent {
+      background: orange;
+      height: 200px;
+      border: 1px solid orange;
+      display: block;
+      margin-bottom: 2em;
+    }
+
+    .child {
+      width: 50%;
+      background: black;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      margin: 1em auto;
+    }
+
+    .ib {
+      display: inline-block;
+    }
+
+    .float {
+      float: right;
+      width: 50%;
+    }
+
+    .floatr {
+      float: right;
+      width: 30%;
+    }
+    
+    .floatl {
+      float: left;
+      width: 30%;
+    }
+
+    .pf {
+      margin: 0 10px 5px 0;
+      text-align: center;
+      border: 1px solid black;
+    }
+    
+    .left-picture{
+      float: left;
+      margin: 0 10px 5px 0;
+      text-align: center;
+      border: 1px solid red;
+    }
+
+    .h3c {
+      clear: left;
+    }
+
+    .product{
+        background: #f2f400;
+        border: 1px solid red;
+        /*float: left;*/
+        /*overflow:hidden;*/
+    }
+
+    .clearfix:after {
+      content: "."; /* добавить содержимое: "." */
+      display: block;  /* сделать блоком, т.к. inline не может иметь clear */
+      clear: both;  /* с обеих сторон clear */
+      visibility: hidden; /* сделать невидимым, зачем нам точка внизу? */
+      height: 0;  /* сделать высоту 0, чтобы не занимал место */
+    }
+
+    .gallery li {
+      float: left;
+      width: 300px;
+      list-style: none;
+    }
+
+    .column-left {
+      float: left;
+      width: 30%;
+      background: green;
+    }
+
+    .column-right {
+      float: left;
+      width: 70%;
+      background: white;
+    }
+
+    .footer {
+      clear: both;
+      background: blue;
+    }
+
+
+
+     </style>
+
+</head>
+
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="shop.html">Shop</a></li>
+    </li>
+    
+    <h1>Box Model Page</h1>
+
+
+    <h2>Схлопывание» внешних отступов</h2>
+        <p>
+        Вертикальный отступ между двумя соседними элементами равен максимальному отступу между ними. Если отступ одного элемента равен 20px, а второго 40px, то отступ между ними будет 40px.
+        </p>
+        <p>
+        Этот эффект называется эффектом «схлопывания» внешних отступов или «схлопывания» маргинов.
+        Горизонтальные отступы между элементами просто складываются. Например, горизонтальный отступ между двумя элементами с отступами 30px будет равен 60px. Для отступов слева и справа схлопывание никогда не применяется.
+        </p>
+
+        <div class="block block-1">Блок 1</div>
+        <div class="block block-2">Блок 2</div>
+
+    <h2>W3C Box Model</h2>
+    <p>Это стандартное значение. Свойства width и height вычисляются исключительно по контенту, и не включая margin, padding и border.
+    </p>
+
+    <div class="odiv wt-model"></div>
+
+    <h2 class="heading">Traditional Box Model</h2>
+    <p>
+    Свойства width и height вычисляются по контенту, padding и border, но не включая margin. </p>
+    <div class="odiv tr-model"></div>
+
+    <h2>Padding</h2>
+    <p>Разрешается использовать одно, два, три или четыре значения, разделяя их между собой пробелом. Эффект зависит от количества значений.</p>
+
+    <h2><code>padding: 10px;</code></h2>
+    <div class="pdiv wt-model ap"></div>
+    
+    <h2><code>padding: 2em 4em;</code></h2>
+    <div class="pdiv wt-model bp"></div>
+    
+    <h2><code>padding: 1em 20px 2em;</code></h2>
+    <div class="pdiv wt-model cp"></div>
+    
+    <h2><code>padding: 10px 10% 2em 15%;</code></h2>
+    <div class="pdiv wt-model dp"></div>
+
+
+
+    <h2>Paragraph Margin используем Pixels</h2>
+    
+    <div class="tr-model absolute">
+    <p class="yellp">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="yellp">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="yellp">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </div>
+
+    <h2>Paragraph Margin используем Percentage</h2>
+
+    <div class="tr-model relative">
+    <p class="yellp">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="yellp">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="yellp">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </div>
+
+    <h2>Paragraph Padding используем Pixels</h2>
+    <div class="absolute1">
+    <p class="small">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="medium">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="large">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </div>
+
+    <h2>Paragraph Padding используем em Units</h2>
+    <div class="relative1">
+    <p class="small">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="medium">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="large">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    </div>
+
+    <h2>Collapse</h2>
+
+    <div class="relative1">
+    <p class="medium ts">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="medium bs">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    </div>
+        
+
+    <h2>inline-block отменяет Collapse</h2>
+
+    <div class="relative1">
+    <p class="medium ts dib">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    <p class="medium bs dib">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+
+    </div>
+
+    <h2>Схлопывание Margins</h2>
+    <div class="parent"><div class="first-child"></div></div>
+
+    <h2 class="sheading">Использование <code>padding</code> отменяет Схлопывание</h2>
+    <div class="parent padded"><div class="first-child"></div></div>
+
+    <h2 class="sheading">Использование <code>border</code> отменяет Схлопывание</h2>
+    <div class="parent bordered"><div class="first-child"></div></div>
+    
+    <h2>Parent <code>display: block</code></h2>
+    <div class="oparent"><div class="child"><p>Child Element</p></div></div>    
+
+    <h2>Parent <code>display: inline-block</code></h2>
+    <div class="oparent ib"><div class="child"><p>Child Element</p></div></div>
+
+    <h2>Parent <code>float: right</code></h2>
+    <div class="oparent float"><div class="child"><p>Child Element</p></div></div>
+    <br>
+    <h2>Свойство float</h2>
+
+    <img src="images/1.jpg" class="floatr">
+      <p class="pf">
+      Элемент IMG вынимается из потока, последующие блоки начинают вести себя так, как будто его нет, и заполняют освободившееся место
+      Элемент IMG сдвигается максимально вправо(float:right):
+      </p>
+      <p class="pf">
+      Строки, в отличие от блочных элементов, «чувствуют» float и уступают ему место, обтекая картинку слева
+      </p>
+
+        <img src="images/2.jpg" class="floatl">
+        <p class="pf">
+      При float:left – всё то же самое, только IMG смещается влево (или не смещается, если он и так у левого края), а строки – обтекают справа. Строки и инлайн-элементы смещаются, чтобы уступить место float. Обычные блоки – ведут себя так, как будто элемента нет.
+    </p>
+    <div class="left-picture">
+        <img src="images/3.jpg">
+        <p>
+      блок div.left-picture «обернул» картинку и текст под ней: ширина блока с float определяется по содержимому.
+    </p>
+    </div>
+
+    <div class="left-picture">
+        <img src="images/3.jpg" class="floatr">
+        <p class="pf">блок div.left-picture «обернул» картинку и текст под ней, и растянулся на всю ширину. Это следствие того, что ширина блока с float определяется по содержимому.    
+        </p>    
+    </div>
+
+    <h3>Image 2</h3>
+    <img src="images/2.jpg" class="floatl">
+    <p>
+      h3: Согласно алгоритму, он двигается до левой границы или до касания с другим float-элементом
+    </p>
+
+    <h3>Image 1</h3>
+    <img src="images/1.jpg" class="floatl">
+    <p>
+      h3: Согласно алгоритму, он двигается до левой границы или до касания с другим float-элементом
+    </p>
+
+    <h3 class="h3c">Image 2</h3>
+    <img src="images/2.jpg" class="floatl">
+    <p>
+      h3: Согласно алгоритму, он двигается до левой границы или до касания с другим float-элементом
+    </p>
+
+    <h3 class="h3c">Image 1</h3>
+    <img src="images/1.jpg" class="floatl">
+    <p>
+      h3: Согласно алгоритму, он двигается до левой границы или до касания с другим float-элементом
+    </p>
+    <br>
+    <h3>Чтобы исправить ситуацию, можно добавить перед заголовком пустой промежуточный элемент без отступов, с единственным свойством clear:both. Тогда уже под ним отступ заголовка будет работать нормально:</h3>
+    <br>
+    <h3 class="h3c">Image 2</h3>
+    <img src="images/2.jpg" class="floatl">
+    <p>
+      h3: Согласно алгоритму, он двигается до левой границы или до касания с другим float-элементом
+    </p>
+    <br>
+    <h3 class="h3c">Image 1</h3>
+    <img src="images/1.jpg" class="floatl">
+    <p>
+      h3: Согласно алгоритму, он двигается до левой границы или до касания с другим float-элементом
+    </p>
+
+    <br>
+    <h2>Заполнение блока-родителя</h2>
+    <p>Из-за того, что блок с float удалён из потока, родитель не выделяет под него места.</p>
+
+    <div class="product">
+
+    <h3 class="h3c">Image 2</h3>
+    <img src="images/2.jpg" class="floatl">
+    <p>
+      Элемент с float обязан расшириться, чтобы вместить вложенные float.
+    </p>
+
+    <div class="product">
+
+    <h3 class="h3c">Image 2</h3>
+    <img src="images/2.jpg" class="floatl">
+    <p>
+      Добавить в родителя элемент с clear
+
+    </p>
+    <br>
+    
+    </div>
+
+    <div class="product clearfix">
+
+    <h3 class="h3c">Image 2</h3>
+    <img src="images/2.jpg" class="floatl">
+    <p>
+      <code>
+      .clearfix:after {
+          content: "."; /* добавить содержимое: "." */
+          display: block;  /* сделать блоком, т.к. inline не может иметь clear */
+          clear: both;  /* с обеих сторон clear */
+          visibility: hidden; /* сделать невидимым, зачем нам точка внизу? */
+          height: 0;  /* сделать высоту 0, чтобы не занимал место */
+        }
+    </code>
+
+    Добавив этот класс к родителю, получим тот же результат, что и выше.
+    </p>
+   
+    
+    </div>
+
+
+    <div class="product">
+
+    <h3 class="h3c">Image 2</h3>
+    <img src="images/2.jpg" class="floatl">
+    <p>
+     Свойство CSS overflow определяет, необходимо ли для переполненного блочного элемента содержимое обрезать, предоставить полосы прокрутки или просто отобразить.
+    </p>
+      
+    </div>
+
+    <br>
+    
+    <h3>При помощи float можно размещать блочные элементы в строке, похоже на display: inline-block:</h3>
+    
+    <pre>
+
+
+    .gallery li {
+      float: left;
+      width: 300px;
+      list-style: none;
+    }
+
+    </pre>
+
+
+    <ul class="gallery">
+        <li><img src="images/1.jpg"></li>
+        <li><img src="images/2.jpg"></li>
+        <li><img src="images/3.jpg"></li>
+    </ul>
+
+    <br>
+    <h2>float:left + float:right</h2>
+
+    <p>для вёрстки в две колонки можно сделать два div. Первому указать float:left (левая колонка), а второму – float:right (правая колонка).
+
+    каждой колонке нужно дополнительно указать ширину</p>
+
+    <div>Шапка</div>
+    <div class="column-left"><h1>Левая колонка</h1></div>
+    <div class="column-right"><h1>Правая колонка</h1></div>
+    <div class="footer"><b>Footer</b></div>
+
+</body>
+</html>
