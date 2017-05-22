@@ -1,0 +1,76 @@
+.gp {
+    width: 45%;
+    display: inline-block;
+    margin: 10px auto;
+  }
+
+footer{
+    width: 100%;
+    clear: both;
+}
+
+.blog{
+    width:70%;
+    float: left;
+}
+.right-aside{
+    width: 30%;
+    float: left;
+}
+
+/*.header {
+     background: #fff;
+     color: #555f66;
+     height: 20em;
+     left: 0;
+     line-height: 3em;
+     top: 0;
+     width: 100%;
+     text-align: center;
+}
+
+article, hgroup {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+.blog-right{
+    width: 65%;
+    float: left; 
+    padding-left: 1.5em;
+
+}
+.blog-left{
+    width: 30%;
+    float: left;
+}
+.wrapper{
+    margin-bottom: 3em;
+    border: 1px solid #ccc;
+    clear:both;
+}*/
+
+/*.bg{
+    background-size: cover;
+    background-attachment: fixed;
+    height: 40em;
+    width: 100%;
+}
+
+.bg1{
+    background-image: url('../images/1.jpg');
+}
+
+.bg2{
+    background-image: url('../images/2.jpg');
+}
+
+.bg3{
+    background-image: url('../images/3.jpg');
+}
+
+.bg4{
+    background-image: url('../images/1.jpg');
+}*/
