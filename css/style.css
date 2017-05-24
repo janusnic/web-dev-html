@@ -4,10 +4,6 @@
     margin: 10px auto;
   }
 
-footer{
-    width: 100%;
-    clear: both;
-}
 
 .blog{
     width:70%;
@@ -52,10 +48,10 @@ article, hgroup {
     clear:both;
 }*/
 
-/*.bg{
+.bg{
     background-size: cover;
     background-attachment: fixed;
-    height: 40em;
+    height: 20em;
     width: 100%;
 }
 
@@ -73,4 +69,5 @@ article, hgroup {
 
 .bg4{
     background-image: url('../images/1.jpg');
-}*/
+}
+
