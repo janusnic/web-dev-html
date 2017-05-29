@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+* {
+	font-family: Arial, sans;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+h1 {
+	margin: 1em 0;
+	text-align: center;
+}
+
+#container {
+    margin: 0 auto;
+    width: 900px;
+}
+
+#container input {
+	height: 2.5em;
+	visibility: hidden;
+}
+
+#container label img {
+	border-radius: .25em .25em 0 0;
+	display: block;
+	max-width: 100%;
+	float: left;
+	height: 2.5em;
+	line-height: 2.5em;
+	margin-right: .25em;
+	padding: 0;
+	text-align: center;
+	opacity: 0.5;
+}
+
+#container input:hover + label img {
+	opacity: 1;
+}
+
+#container input:checked + label img {
+	opacity: 1;
+	position: relative;
+	z-index: 6;
+}
+
+#content {
+	border-radius: 0 .25em .25em .25em;
+	min-height: 10em;
+	position: relative;
+	width: 100%;
+	z-index: 5;
+}
+
+#content div {
+	opacity: 0;
+	padding-top: 0.5em;
+	position: absolute;
+	z-index: -100;
+	height: 100%;
+}
+
+#content img {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+#container input#tab-1:checked ~ #content #content-1,
+#container input#tab-2:checked ~ #content #content-2,
+#container input#tab-3:checked ~ #content #content-3,
+#container input#tab-4:checked ~ #content #content-4,
+#container input#tab-5:checked ~ #content #content-5 {
+    opacity: 1;
+    z-index: 100;
+}
+
+input.visible {
+  visibility: visible !important;
+}
+</style>
+</head>
+
+<body>
+<body>
+
+	<h1>CSS3 & HTML5 Gallery</h1>
+
+	<div id="container">
+
+	    <input id="tab-1" type="radio" name="tab-group" checked="checked" />
+	    <label for="tab-1"><img src="images/1.jpg" alt=""></label>
+	    <input id="tab-2" type="radio" name="tab-group" />
+	    <label for="tab-2"><img src="images/2.jpg" alt=""></label>
+	    <input id="tab-3" type="radio" name="tab-group" />
+	    <label for="tab-3"><img src="images/3.jpg" alt=""></label>
+		<input id="tab-4" type="radio" name="tab-group" />
+	    <label for="tab-4"><img src="images/4.jpg" alt=""></label>
+		<input id="tab-5" type="radio" name="tab-group" />
+	    <label for="tab-5"><img src="images/5.jpg" alt=""></label>
+
+	    <div id="content">
+
+	        <div id="content-1">
+	            <img src="images/1.jpg" alt="">
+	        </div>
+
+	        <div id="content-2">
+	            <img src="images/2.jpg" alt="">
+	        </div>
+
+	        <div id="content-3">
+				<img src="images/3.jpg" alt="">
+	        </div>
+
+	        <div id="content-4">
+				<img src="images/4.jpg" alt="">
+	        </div>
+
+	        <div id="content-5">
+				<img src="images/5.jpg" alt="">
+	        </div>
+
+	    </div>
+	</div>
+</body>
+
+</body></html>
