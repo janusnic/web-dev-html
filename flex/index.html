@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Landing Page Template With Flexbox</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+
+    article {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    	min-height: 100vh;
+        color: #212121;
+
+      width: 100%;
+      background-attachment: fixed;
+      background-size: cover !important;
+      background-position: center;
+      background-blend-mode: screen;
+
+    }
+    article .title{
+        text-transform: uppercase;
+        font-size: 2.5em;
+        font-weight: 900;
+        text-align: center;
+        padding: 135px 10px 30px;
+
+}
+    article .quote{
+    	text-align: center;
+        padding: 135px 100px 30px;
+        max-width: 800px;
+        line-height: 2;
+        font-size: 2em;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+
+    article .author{
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    article .author:last-child{
+        margin-bottom: 0;
+    }
+
+
+    article:nth-of-type(1) {
+     background-image: url("images/bg1.jpg");
+     background-color: #555;
+    }
+
+    article:nth-of-type(2) {
+      background-image: url("images/bg2.jpg");
+      background-color: #555;
+
+    }
+    article:nth-of-type(3) {
+      background-image: url("images/bg3.jpg");
+
+      opacity: 0.5;
+    }
+    article:nth-of-type(4) {
+      background-image: url("images/bg4.jpg");
+    }
+    article:nth-of-type(5) {
+      background-image: url("images/bg3.jpg");
+      background-color: #555;
+    }
+    article:nth-of-type(6) {
+      background-image: url("images/bg4.jpg");
+    }
+    article:nth-of-type(7) {
+      background-image: url("images/bg3.jpg");
+      background-color: #555;
+    }
+    article:nth-of-type(8) {
+      background-image: url("images/bg4.jpg");
+    }
+
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+		<h2><a href="#">Website Logo</a></h2>
+		<nav>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contacts</a></li>
+		</nav>
+	</header>
+
+
+	<section class="banner">
+		<div class="background-image"></div>
+		<h1>Responsive Flexbox Landing Page</h1>
+		<h3>Awesome Product.</h3>
+		<a href="#" class="btn">Buy Now!</a>
+	</section>
+
+    <section class="our-work">
+		<h3 class="title">Some of our work</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+		<hr>
+
+		<ul class="grid">
+			<li class="small" id="id1"></li>
+			<li class="large" id="id2"></li>
+			<li class="large" id="id3"></li>
+			<li class="small" id="id4"></li>
+		</ul>
+	</section>
+
+	<section class="features">
+
+            <h3 class="title">Features and services</h3>
+    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+
+		<hr>
+
+		<ul class="grid">
+			<li>
+				<i class="fa fa-camera-retro"></i>
+				<h4>Photography</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices vitae pulvinar velit.</p>
+			</li>
+			<li>
+				<i class="fa fa-cubes"></i>
+				<h4>Web Development</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices vitae pulvinar velit.</p>
+			</li>
+			<li>
+				<i class="fa fa-newspaper-o"></i>
+				<h4>Content Editing</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices vitae pulvinar velit.</p>
+			</li>
+		</ul>
+	</section>
+
+    <article>
+                      <h3 class="title">What others say:</h3>
+                      <p class="quote">Mauris sit amet mauris a arcu eleifend ultricies eget ut dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                      <p class="author">— Patrick Farrell</p>
+    </article>
+
+<article>
+
+</article>
+<article>
+    <p class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+    <p class="author">— George Smith</p>
+    <p class="quote">Donec commodo dolor augue, vitae faucibus tortor tincidunt in. Aliquam vitae leo quis mi pulvinar ornare. Integer eu iaculis metus.</p>
+    <p class="author">— Kevin Blake</p>
+</article>
+<article>
+
+</article>
+
+
+	<section class="reviews">
+        <h3 class="title">What others say:</h3>
+
+        <div class="col3">
+        <div class="col3-1">
+        <p class="quote">Mauris sit amet mauris a arcu eleifend ultricies eget ut dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+        <p class="author">— Patrick Farrell</p>
+        </div>
+        <div class="col3-2">
+        <p class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+        <p class="author">— George Smith</p>
+        </div>
+        <div class="col3-3">
+        <p class="quote">Donec commodo dolor augue, vitae faucibus tortor tincidunt in. Aliquam vitae leo quis mi pulvinar ornare. Integer eu iaculis metus.</p>
+        <p class="author">— Kevin Blake</p>
+        </div>
+        </div>
+    </section>
+    <article>
+        <p class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+        <p class="author">— George Smith</p>
+
+    </article>
+    <article>
+        </article>
+	<section class="contact">
+		<h3 class="title">Join our newsletter</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+		<hr>
+
+		<form>
+			<input type="email" placeholder="Email">
+			<a href="#" class="btn">Subscribe now</a>
+		</form>
+	</section>
+    <article>
+        <p class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
+        <p class="author">— George Smith</p>
+
+    </article>
+    <article>
+        </article>
+    <footer>
+        <ul>
+            <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-snapchat-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-github-square"></i></a></li>
+        </ul>
+
+
+            <p>Copyright &copy; 2017 Copyright Holder All Rights Reserved.</p>
+            <p>Design: <a href="#" target="_blank">TEMPLATED</a>. Images: <a href="#" target="_blank">PAINTER</a></p>
+
+    </footer>
+
+</body>
+
+</html>
