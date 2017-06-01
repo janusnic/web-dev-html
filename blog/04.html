@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Grid Layout</title>
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Scope+One|Open+Sans:700");
+
+    *,*:before,*:after {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 'Scope One', Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        background: #fff
+        color: #717388;
+        font-size: 1rem;
+        line-height: 1;
+        margin: 1rem;;
+    }
+
+    .header {
+      margin: 10vh 1.5vw;
+      text-align: center;
+      color: #cedfe9;
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    .header h1,
+    .header h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      line-height: 1;
+    }
+
+    h1 {
+        color: #717388;
+        font-size: 4.5rem;
+        font-weight: 700;
+        padding-top: .5rem;
+    }
+
+    h2 {
+      color: #999;
+      font-size: 1.25rem;
+    }
+
+    @media screen and (min-width: 750px) {
+
+      .header h1 {
+        font-size: 3.75rem;
+      }
+
+      .header h2 {
+        font-weight: normal;
+        font-size: 1.125rem;
+        letter-spacing: 0.5em;
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+
+      .header h1 {
+        font-size: 6rem;
+      }
+
+      .header h2 {
+        font-weight: normal;
+        font-size: 1.5rem;
+      }
+    }
+
+    a {
+      color: #E4844A;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    strong {
+      display: block;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    div {
+      border: 1px solid #ddd;
+      padding: .75vw 1vw;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    main {
+      display: grid;
+      grid-gap: 16px;
+
+      grid-template-columns: 10vw minmax(50px, 50vw) repeat(2, 1fr);
+      grid-template-rows: repeat(10, min-content);
+    }
+
+    [data-grid='grid-cell'] {
+      border-color: #ff0048;
+    }
+    [data-grid='grid-cell']:hover {
+      background: #ff0048;
+    }
+
+    [data-grid='grid-column'] {
+      border-color: rgba(2, 143, 118, 0.8);
+      grid-column: 4;
+      grid-row: 1 / 6;
+    }
+    [data-grid='grid-column']:hover {
+      background: rgba(2, 143, 118, 0.8);
+    }
+
+    .box {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: 100%;
+    }
+
+</style>
+</head>
+<body>
+
+    <p>⬇ Grid lines are the horizontal and vertical dividing lines of the grid.</p>
+    <main>
+    	<div>Grid Cell 1<img src="images/1.jpg" /></div>
+    	<div>Grid area 2
+    		<h1>CSS Grid Layout</h1>
+    		<h2>New Terminology</h2>
+    	</div>
+    	<div>Grid Cell 3</div>
+    	<div data-grid="grid-column">Grid Track (Column) 4
+    		<p><strong>Grid Track (Column)</strong> A grid track is the space between two adjacent grid lines, forming a grid column or grid row.</p>
+    	</div>
+    	<div>Grid Cell 5<img src="images/5.jpg" /></div>
+    	<div data-grid="grid-area">Grid Area 6
+    		<p><strong>Grid Area</strong> A grid area consists of one or more adjecent grid cells. It is bound by four grid lines, one on each side of the grid area.</p>z
+    	</div>
+    	<div data-grid="grid-cell">Grid Cell 7
+    		<p><strong>Grid Cell</strong> A grid cell is the smallest unit of the grid. A grid cell is the intersection of a grid row and a grid column.</p>
+    	</div>
+    	<div>Grid Cell 8</div>
+    	<div>Grid Cell 9</div>
+    	<div>Grid Cell 10</div>
+    	<div>Grid Cell 11</div>
+    	<div data-grid="grid-row">Grid Track (Row) 12
+    		<p><strong>Grid Track (Row)</strong> A grid track is the space between two adjacent grid lines, forming a grid column or grid row.</p>
+    	</div>
+    </main>
+
+    <footer>
+    	<p>Experiment with me! CSS Grid Layout works in Firefox 52, Safari 10.1 (and iOS), Chrome 57 (and Chrome 57 for Android) and Opera. Microsoft is currently working on implementation.</p>
+    </footer>
+
+    <aside class="support">
+    	<a class="supported"  href="http://caniuse.com/#feat=css-grid">This browser supports CSS Grid Layout.</a>
+    </aside>
+
+</body>
+</html>

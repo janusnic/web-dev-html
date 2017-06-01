@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Grid Layout</title>
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Scope+One|Open+Sans:700");
+
+    *,*:before,*:after {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 'Scope One', Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        background: #fff
+        color: #717388;
+        font-size: 1rem;
+        line-height: 1;
+        margin: 1rem;;
+    }
+
+    .header {
+      margin: 10vh 1.5vw;
+      text-align: center;
+      color: #cedfe9;
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    .header h1,
+    .header h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      line-height: 1;
+    }
+
+    h1 {
+        color: #717388;
+        font-size: 4.5rem;
+        font-weight: 700;
+        padding-top: .5rem;
+    }
+
+    h2 {
+      color: #999;
+      font-size: 1.25rem;
+    }
+
+    @media screen and (min-width: 750px) {
+
+      .header h1 {
+        font-size: 3.75rem;
+      }
+
+      .header h2 {
+        font-weight: normal;
+        font-size: 1.125rem;
+        letter-spacing: 0.5em;
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+
+      .header h1 {
+        font-size: 6rem;
+      }
+
+      .header h2 {
+        font-weight: normal;
+        font-size: 1.5rem;
+      }
+    }
+
+    a {
+      color: #E4844A;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    strong {
+      display: block;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    div {
+      border: 1px solid #ddd;
+      padding: .75vw 1vw;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    main {
+      display: grid;
+      grid-gap: 16px;
+
+      grid-template-columns: 10vw minmax(50px, 50vw) repeat(2, 1fr);
+      grid-template-rows: repeat(10, min-content);
+    }
+
+    [data-grid='grid-cell'] {
+      border-color: #ff0048;
+    }
+    [data-grid='grid-cell']:hover {
+      background: #ff0048;
+    }
+
+    [data-grid='grid-column'] {
+      border-color: rgba(2, 143, 118, 0.8);
+      grid-column: 4;
+      grid-row: 1 / 6;
+    }
+    [data-grid='grid-column']:hover {
+      background: rgba(2, 143, 118, 0.8);
+    }
+
+    [data-grid='grid-area'] {
+      border-color: #8a0054;
+      grid-row: span 3;
+    }
+    [data-grid='grid-area']:hover {
+      background: #8a0054;
+    }
+
+
+    [data-grid='grid-row'] {
+      background: rgba(255, 255, 255, 0.5);
+      border-color: rgba(38, 95, 163, 0.8);
+      grid-column: 1 / 5;
+      grid-row: 5;
+    }
+    [data-grid='grid-row']:hover {
+      background: rgba(38, 95, 163, 0.8);
+    }
+
+    footer {
+      display: grid;
+      grip-gap: 16px;
+      grid-template-columns: 10vw minmax(50px, 50vw) 1fr 2fr;
+      margin: 0 1rem;
+    }
+    footer p {
+      grid-column: 2 / 4;
+      margin-bottom: 5rem;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feed-grid {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      max-width: 1170px;
+      margin: 0 auto;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
+    }
+    .card {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      margin: 7px;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 10px 0px rgba(110, 123, 140, 0.3);
+      -webkit-box-flex: 1;
+          -ms-flex: auto;
+              flex: auto;
+    }
+    .card img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+    }
+    .card:nth-child(5) {
+      -webkit-box-flex: 545px;
+          -ms-flex: 545px;
+              flex: 545px;
+    }
+
+    .card-half {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 32%;
+      height: 32%;
+      margin: 0.5em;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 3px 0px rgba(110, 123, 140, 0.3);
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      -webkit-box-flex: 1;
+          -ms-flex: auto;
+              flex: auto;
+    }
+
+    .wide {
+      width: 48%;
+    }
+
+    .card-img {
+      position: relative;
+      height: 160px;
+      -webkit-box-flex: 1;
+          -ms-flex: auto;
+              flex: auto;
+    }
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+    }
+
+    .label {
+      position: absolute;
+      top: 1em;
+      right: 1.2em;
+      color: #fdd701;
+      font-size: 2em;<ul class="card-tools">
+                  <li class="tools-item"><i class="fa fa-heart like"></i><span class="tools-count">543</span></li>
+                  <li class="tools-item"><i class="fa fa-share share"></i></li>
+                </ul>
+    }
+
+    .card-text {
+      padding: 0 0.8em;
+    }
+    .card-text p {
+      margin: 0;
+      padding: 0;
+      color: #888888;
+    }
+
+    .card-tools {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 50px;
+      padding: 1em 1.5em;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+    }
+
+    .tools-item {
+      margin-right: 1.5em;
+      cursor: pointer;
+      -webkit-transition: opacity 200ms ease;
+      transition: opacity 200ms ease;
+    }
+    .tools-item:hover {
+      opacity: 0.7;
+    }
+
+    .tools-count {
+      padding: 0 5px;
+      color: #888888;
+      font-size: 1em;
+    }
+
+    .share {
+      color: #333333;
+    }
+
+    .like {
+      color: #df2324;
+    }
+
+    .info-center {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 0 10px;
+      text-align: center;
+      color: white;
+      background: rgba(0, 0, 0, 0.3);
+      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+      font-size: 24px;
+      font-weight: bold;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    .hearo{
+        background-image: url(images/2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+    .hearo h1{
+        color: white;
+    }
+
+</style>
+</head>
+<body>
+
+    <p>⬇ Grid lines are the horizontal and vertical dividing lines of the grid.</p>
+    <main>
+    	<div><img src="images/1.jpg" /><p><strong>Grid Cell 1</strong> A grid cell is the smallest unit of the grid. </p></div>
+    	<div class="hearo">Grid area 2
+    		<h1>CSS Grid Layout</h1>
+    		<h2>New Terminology</h2>
+    	</div>
+    	<div>Grid Cell 3<img src="images/3.jpg" /><p><strong>Grid Cell</strong> A grid cell is the smallest unit of the grid. A grid cell is the intersection of a grid row and a grid column.</p></div>
+    	<div data-grid="grid-column">Grid Track (Column) 4
+    		<p><strong>Grid Track (Column)</strong> A grid track is the space between two adjacent grid lines, forming a grid column or grid row.</p>
+    	</div>
+    	<div><img src="images/5.jpg" /><p><strong>Grid Cell 5</strong> A grid cell is the smallest unit of the grid. </p></div>
+    	<div data-grid="grid-area">
+            <div class="feed-grid"><ul class="card-tools">
+                    <li class="tools-item"><i class="fa fa-heart like"></i><span class="tools-count">543</span></li>
+                    <li class="tools-item"><i class="fa fa-share share"></i></li>
+                  </ul>
+              <div class="card-half wide">
+                <div class="card-img"><span class="label"> <i class="fa fa-star"></i></span><img src="images/5.jpg" alt="img"/></div>
+                <div class="card-text">
+                  <h4>All outdoor & adventure lovers should follow this guy on instagram</h4>
+                  <p>Just take a look at a few of his shots and try not to want this in your feed regularly.</p>
+
+                </div>
+
+              </div>
+              <div class="card"> <img src="images/4.jpg" alt="img"/>
+                <div class="info-center">12 Photos Of A Gorgeously Designed NYC Home</div>
+              </div>
+              <div class="card"><img src="images/3.jpg" alt="img"/>
+                <div class="info-center">Beautiful Yet Simple Warehouse-Inspired Home</div>
+              </div>
+              <div class="card"><img src="images/2.jpg" alt="img"/>
+                <div class="info-center">Top trends this winter 2017</div>
+              </div>
+              <div class="card-half wide">
+                <div class="card-img"><img src="images/1.jpg" alt="img"/></div>
+                <div class="card-text">
+                  <h4>History travel to Spain. Photos stunning country</h4>
+                  <p>Just take a look at a few of his shots and try not to want this in your feed regularly.</p>
+
+                </div>
+                <div>
+                <ul class="card-tools">
+                  <li class="tools-item"><i class="fa fa-heart like"></i><span class="tools-count">133</span></li>
+                  <li class="tools-item"><i class="fa fa-share share"></i></li>
+                </ul>
+                </div>
+              </div>
+              <div class="card-half">
+                <div class="card-img"><img src="images/6.jpg" alt="img"/></div>
+                <div class="card-text">
+                  <h4>Pre-Match Briefing: Stoke City v Chelsea</h4>
+                  <p>We have a tea-time appointment in the Potteries later today.</p>
+                  <div>
+                  <ul class="card-tools">
+                    <li class="tools-item"><i class="fa fa-heart like"></i><span class="tools-count">133</span></li>
+                    <li class="tools-item"><i class="fa fa-share share"></i></li>
+                  </ul>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="card"> <img src="images/5.jpg" alt="img"/>
+                <div class="info-center">Best 100 memorable sports photos</div>
+              </div>
+              <div class="card"><img src="images/4.jpg" alt="img"/>
+                <div class="info-center">Long shadow is dead. Welcome Diffuse shadows.</div>
+              </div>
+              <div class="card"> <img src="images/3.jpg" alt="img"/>
+                <div class="info-center">12 Photos Of A Gorgeously Designed NYC Home</div>
+              </div>
+              <div class="card"><img src="images/2.jpg" alt="img"/>
+                <div class="info-center">Christina Schneiderlin: Interview with the artist</div>
+              </div>
+              <div class="card-half">
+                <div class="card-img"><span class="label"> <i class="fa fa-star"></i></span><img src="images/1.jpg" alt="img"/></div>
+                <div class="card-text">
+                  <h4>You just should run</h4>
+                  <p>Learn how to run can improve your health.</p>
+                </div>
+                <ul class="card-tools">
+                  <li class="tools-item"><i class="fa fa-heart like"></i><span class="tools-count">8543</span></li>
+                  <li class="tools-item"><i class="fa fa-share share"></i></li>
+                </ul>
+              </div>
+            </div>
+
+    	</div>
+    	<div data-grid="grid-cell">Grid Cell 7
+    		<p><strong>Grid Cell</strong> A grid cell is the smallest unit of the grid. A grid cell is the intersection of a grid row and a grid column.</p>
+    	</div>
+    	<div><img src="images/4.jpg" /><p><strong>Grid Cell 8</strong> A grid cell is the smallest unit of the grid. </p></div>
+    	<div>Grid Cell 9<img src="images/6.jpg" /></div>
+    	<div><img src="images/2.jpg" /><p><strong>Grid Cell 10</strong> A grid cell is the smallest unit of the grid. </p></div>
+    	<div>Grid Cell 11<p><strong>Grid Cell</strong> A grid cell is the smallest unit of the grid. A grid cell is the intersection of a grid row and a grid column.</p></div>
+    	<div data-grid="grid-row">Grid Track (Row) 12
+    		<p><strong>Grid Track (Row)</strong> A grid track is the space between two adjacent grid lines, forming a grid column or grid row.</p>
+    	</div>
+    </main>
+
+    <footer>
+    	<p>Experiment with me! CSS Grid Layout works in Firefox 52, Safari 10.1 (and iOS), Chrome 57 (and Chrome 57 for Android) and Opera. Microsoft is currently working on implementation.</p>
+    </footer>
+
+    <aside class="support">
+    	<a class="supported"  href="http://caniuse.com/#feat=css-grid">This browser supports CSS Grid Layout.</a>
+    </aside>
+
+</body>
+</html>
